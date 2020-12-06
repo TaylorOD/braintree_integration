@@ -34,7 +34,7 @@ To add your environment credentials:
 
 3. Once you are done adding your own credentials save and close the file. If you already had your rails server running you need to restart it for the changes to go into effect. Your credentials will now be added into your Gateway call in the checkout_controller (see screenshot below)
 
-- ![Controller](/braintree_ruby_integration/public/screenshots/bbraintree_credentials_example_in_controller.png "Controller")
+- ![Controller](/braintree_ruby_integration/public/screenshots/braintree_credentials_example_in_controller.png "Controller")
 
 - Running it: Run "rails server" in your project directory and open your browser to localhost:3000. From there you will be able to input the test card numbers (currently listed as placeholder text) and click pay. You will receive confirmation that the transaction was created in your rails server, your browser, and on screen.
 
