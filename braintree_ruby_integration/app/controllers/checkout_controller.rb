@@ -1,8 +1,5 @@
 class CheckoutController < ApplicationController
 
-  protect_from_forgery with: :null_session
-
-
   def new
     @client_token = gateway.client_token.generate
     render json: { client_token: @client_token }, status: :created

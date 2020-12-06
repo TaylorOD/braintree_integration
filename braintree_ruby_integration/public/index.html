@@ -95,6 +95,11 @@
                   payment_method_nonce: payload.nonce
                 }
                 axios.post("/client_token", params)
+                .then(response => {
+                console.log("Succsess - Transaction Created", response)
+                })
+                
+
                 
                 
               })

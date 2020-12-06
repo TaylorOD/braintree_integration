@@ -7,10 +7,7 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
 
-  get "/checkout" => "checkout#index"
-
   get "/client_token" => "checkout#new"
-
   post "/client_token" => "checkout#transaction"
 
 end
