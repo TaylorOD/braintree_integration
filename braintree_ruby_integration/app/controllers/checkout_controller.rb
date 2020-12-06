@@ -11,9 +11,9 @@ class CheckoutController < ApplicationController
   def gateway
     Braintree::Gateway.new(
     :environment => :sandbox,
-    :merchant_id => "Bearer #{Rails.application.credentials.braintree[:merchant_id]}",
-    :public_key => "Bearer #{Rails.application.credentials.braintree[:public_key]}",
-    :private_key => "Bearer #{Rails.application.credentials.braintree[:private_key]}",
+    :merchant_id => "#{Rails.application.credentials.braintree[:merchant_id]}",
+    :public_key => "#{Rails.application.credentials.braintree[:public_key]}",
+    :private_key => "#{Rails.application.credentials.braintree[:private_key]}",
     )
   end
 
