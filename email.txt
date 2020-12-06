@@ -1,0 +1,48 @@
+Prompt:
+
+Jamie is looking to get some advice on Braintree's Fraud Tools and more information about
+some failing transactions they are seeing. You can use these resources to help craft your
+response:
+
+https://developers.braintreepayments.com/start/overview
+https://articles.braintreepayments.com/
+
+And here is the note from Jamie, business owner:
+
+Hi Braintree, I just launched my official NBA Bulls merchandise business and started taking
+orders this week. I'm new to the payment processing world and I'm very concerned about online
+fraud. I've already enabled duplicate transaction checking, and CVV and AVS rules, but want to
+understand what other options are out there and I'm pretty overwhelmed. Can you tell me more
+about what else Braintree has available to protect my business from fraud and recommend a
+few things for me or my developer to consider implementing? I've also noticed that since I
+enabled these fraud tools, I've had many customers reach out to me to say that their
+transactions said they were declined, but they were still charged. Can you explain why this
+would happen and how I can prevent this situation for my customers? Thanks, Jamie
+
+
+Response: 
+
+Subject: Re: NBA Bulls Store Braintree
+
+Body: Hello Jamie, 
+
+I'd be happy to help. It sounds like you are off to a great start by preventing duplicate transitions and adding our CVV and AVS rules. You can also enable and create custom Risk Threshold Rules.
+
+More info about that here: https://articles.braintreepayments.com/guides/fraud-tools/basic/risk-threshold-rules
+
+A few other Braintree Direct tools you might consider implementing are our Advanced Fraud Management Tools. 
+
+Fraud Protection: This is a fixed set of rules including geolocation and device information that is checked to help determine if the translation is fraudulent. 
+Kount Custom: This is a customizable set of Kount's rules that you can choose and manage. Kount Custom does require an additional fee and is only available to merchants processing 2500+ transactions per month. 
+
+You and your developers can find more detail on both of the Advanced Fraud Management tools here: https://articles.braintreepayments.com/guides/fraud-tools/advanced/overview
+
+Fraud is often a fear when launching a new online store. Thankfully here at Braintree, we always keep that front of mind. I'm sorry to hear about the recently declined transitions. It may have happened for a number of reasons but they were likely picked up by our Fraud Tools. The customers may have entered their CVV incorrectly, listed the wrong address during checkout, or were picked up for suspected fraud and rejected. It is also possible that the bank refused to authorize the charge.
+
+You can find more information on  declines here: https://articles.braintreepayments.com/control-panel/transactions/declines#authorization-decline-codes
+
+If you noticed a specific customer being rejected for a reason you can identify you can override the rule that is rejecting them temporarily but we don't recommend doing this. 
+
+You can check out more information about rejected transactions here: https://articles.braintreepayments.com/guides/fraud-tools/basic/risk-threshold-rules
+
+Let me know if you have any additional questions Jamie and thank you for choosing Braintree.
