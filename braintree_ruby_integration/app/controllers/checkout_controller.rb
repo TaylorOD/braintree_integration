@@ -1,5 +1,8 @@
 class CheckoutController < ApplicationController
 
+  protect_from_forgery with: :null_session
+
+
   def new
     @client_token = gateway.client_token.generate
     render json: { client_token: @client_token }, status: :created
@@ -8,9 +11,9 @@ class CheckoutController < ApplicationController
   def gateway
     Braintree::Gateway.new(
     :environment => :sandbox,
-    :merchant_id => "hf9cyz3ptq2y9gs4",
-    :public_key => "nwj4rbghszp5djhx",
-    :private_key => "f403c64b2487009ec1b5243236c0a182",
+    :merchant_id => "Bearer #{Rails.application.credentials.braintree[:merchant_id]}",
+    :public_key => "Bearer #{Rails.application.credentials.braintree[:public_key]}",
+    :private_key => "Bearer #{Rails.application.credentials.braintree[:private_key]}",
     )
   end
 
@@ -19,8 +22,21 @@ class CheckoutController < ApplicationController
     @result = _create_result_hash(@transaction)
   end
 
-  def noice
-    nonce_from_the_client = params[:payment_method_nonce]
+  def transaction
+    result = gateway.transaction.sale(
+      :amount => "10.00",
+      :payment_method_nonce => params[:payment_method_nonce],
+      :options => {
+        :submit_for_settlement => true 
+      }
+    )
+
+    if result.success?
+      settled_transaction = result.transaction
+    else
+      puts(result.message)
+    end
+    
   end
 
   # def create

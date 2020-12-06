@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   get "/client_token" => "checkout#new"
 
-  post "/client_token" => "checkout#noice"
+  post "/client_token" => "checkout#transaction"
 
 end

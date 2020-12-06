@@ -30,3 +30,7 @@ run gem install braintree in your ruby braintree directory or add the gem "brain
 set up cores - uncomment in rails initalize file
 
 add axios in html file or install it with npm
+
+turn on protect from null session
+
+us

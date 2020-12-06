@@ -92,11 +92,11 @@
                 // send the nonce to your server.
                 console.log('Got a nonce: ' + payload.nonce);
                 
-                form.submit();
                 
-              });
-            }, false);
-          });
+              })
+            }, false)
+            axios.post("/client_token")
+          })
         })
       })
       .catch(error => {
