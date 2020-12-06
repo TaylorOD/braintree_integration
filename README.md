@@ -43,6 +43,9 @@ To add your environment credentials:
 ### Known issues
 - This was tested on Chrome. I do not know how the page will display on other or older browsers. 
 - The page load time slow on initial load. If you are on a slow connection you may have to wait several seconds before the Hosted Fields appear and you are able to see the form boxes.
+- The warning boxes default on input forms default to the side of the page
+- The text box inputs start in the middle rather than left aligned
+- It's not the prettiest application in the world
 
 ### TODO - If I had more time
 - Built the Front End in Vue.js
