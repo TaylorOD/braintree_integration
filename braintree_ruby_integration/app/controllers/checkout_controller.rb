@@ -14,11 +14,6 @@ class CheckoutController < ApplicationController
     )
   end
 
-  def show
-    @transaction = gateway.transaction.find(params[:id])
-    @result = _create_result_hash(@transaction)
-  end
-
   def transaction
     nonce_from_the_client = params[:payment_method_nonce]
 
@@ -29,7 +24,6 @@ class CheckoutController < ApplicationController
         :submit_for_settlement => true 
       }
     )
-
 
     if result.success?
       settled_transaction = result.transaction
