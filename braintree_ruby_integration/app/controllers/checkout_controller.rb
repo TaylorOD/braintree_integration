@@ -23,13 +23,16 @@ class CheckoutController < ApplicationController
   end
 
   def transaction
+    nonce_from_the_client = params[:payment_method_nonce]
+
     result = gateway.transaction.sale(
       :amount => "10.00",
-      :payment_method_nonce => params[:payment_method_nonce],
+      :payment_method_nonce => nonce_from_the_client,
       :options => {
         :submit_for_settlement => true 
       }
     )
+
 
     if result.success?
       settled_transaction = result.transaction
