@@ -27,23 +27,17 @@ class CheckoutController < ApplicationController
 
     if result.success?
       settled_transaction = result.transaction
+
+      # flash[:] = result.success
     else
-      puts(result.message)
+      
+      error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
+      flash[:error] = error_messages
     end
     
   end
 
   # def create
-  #   amount = params["amount"] # In production you should not take amounts directly from clients
-  #   nonce = params["payment_method_nonce"]
-
-  #   result = gateway.transaction.sale(
-  #     amount: amount,
-  #     payment_method_nonce: nonce,
-  #     :options => {
-  #       :submit_for_settlement => true
-  #     }
-  #   )
 
   #   if result.success? || result.transaction
   #     redirect_to checkout_path(result.transaction.id)

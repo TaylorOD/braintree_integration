@@ -3,9 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <title>Checkout</title>
+    <body>
+    <style>
+      html, body {
+        font-size: 100%;
+        font-family: sans-serif;
+        text-align: center;
+        margin: 2.5rem;
+        display: block;
+        background-color: #B6B6B4;
+      }
+      h1 {
+
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+      form {
+        flex-direction: column;
+        background-color: #E5E4E2;
+        padding-bottom: 1.25rem;
+        border-radius: 60px;
+
+ 
+      }
+    </style>
   </head>
-  <body>
     <form action="/" id="my-sample-form" method="post">
+      <h1>Payment Method</h1>
+
       <label for="card-number">Card Number</label>
       <div id="card-number"></div>
 
@@ -46,7 +71,8 @@
             client: clientInstance,
             styles: {
               'input': {
-                'font-size': '14px'
+                'font-size': '14px',
+                "text-align": "center"
               },
               'input.invalid': {
                 'color': 'red'
@@ -74,7 +100,6 @@
               console.error(hostedFieldsErr);
               return;
             }
-
             submit.removeAttribute('disabled');
 
             form.addEventListener('submit', function (event) {
@@ -92,7 +117,7 @@
                 }
                 axios.post("/client_token", params)
                 .then(response => {
-                console.log("Succsess - Transaction Created", response)
+                console.log("Success - Transaction Created", response)
                 })
                 
               })

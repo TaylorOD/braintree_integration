@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # end
 
   get "/client_token" => "checkout#new"
+  
   post "/client_token" => "checkout#transaction"
 
 end
