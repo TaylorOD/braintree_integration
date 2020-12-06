@@ -27,8 +27,8 @@ class CheckoutController < ApplicationController
 
     if result.success?
       settled_transaction = result.transaction
+      puts(result)
 
-      # flash[:] = result.success
     else
       
       error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
