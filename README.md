@@ -62,8 +62,8 @@ To add your environment credentials:
 ![Controller](/public/screenshots/braintree_credentials_example_in_controller.png "Controller")
 
 ### TODO - If I had more time
+- Create tests like the ones in this braintree ruby example page (https://github.com/braintree/braintree_rails_example/blob/master/spec/controllers/checkouts_controller_spec.rb#L24)
 - Built the Front End in Vue.js
-- Add more Tests
 - Build a redirect for successful and unsuccessful post transaction page
 - Add a product to purchase
 - Use another way to input the Transaction Amount rather than hard coding it. I could have easily added an amount form but that is not something you would likely actually want in production. 
