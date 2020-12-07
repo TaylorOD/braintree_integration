@@ -2,14 +2,24 @@
 
 ### Braintree Ruby Integration
 
-- This is an example integration with Braintrees Hosted Fields payment platform. I build this as part of the application process for an API Specialist role at Braintree / PayPal.
-- The application is fairly easy to use. I will detail any dependencies you need to install below but if you are familiar with Ruby on Rails you shouldn't have any problems. 
+- This is an example integration with Braintrees Hosted Fields payment platform. This was built as part of the application process for an API Specialist role at Braintree / PayPal.
+
 - Braintree provides sample card information to test their platform. The details is the placeholder text in my Hosted Field forms but for your reference they are: 
 - CARD NUMBER: 4111 1111 1111 1111
 - CVV: 123
 - EXPIRATION DATE: 10/2022
 - You will need to enter your own API credentials (detailed below) to use this application.
-- Hosted Fields is different and somewhat more complex to integrate than Braintrees "Drop In" forms but they allow for more customization. If you have specialized needs for your payment forms it is a great options with very useful support documents: https://developers.braintreepayments.com/start/overview
+
+### Walkthrough
+
+The files to look at are:
+- app/controllers/checkout_controller - This is where the integration code live
+
+- /config/routes.rb - This is where the routes for generating a client token and making a transaction request live
+
+- /public/index.html - This is where the hosted fields and main page code live
+
+I created the rails app, installed the braintree gem, integrated one route to get a client token, a second route to send a transaction / nonce, set up the public/index.html file, added a little html/css to make the payment form nicer, and added axios to make get/post requests. 
 
 ### Screenshot:
 
@@ -18,13 +28,13 @@
 ### Technology stack: 
 - This integration is built on Ruby on Rails. It uses an HTML, CSS, and JavaScript front end. 
 - It uses the Braintree API Ruby gem to build Hosted Fields for payment processing.
-- Axios is used for GET/POST requests in our index.html file. It is already linked and called but alternatively you could install it run, "npm install axios" in your terminal. 
+- Axios is used for GET/POST requests in our index.html file.
 
 ### Getting Started/Requirements/Prerequisites/Dependencies
 Include any essential instructions for:
 - Getting it: Unzip the zip file in your root target folder.
 
-- Installing It: Run "gem install braintree" in the project directory or add the gem "braintree" to your Ruby gem file. Then run "bundle install".
+- Installing It: Add the gem "braintree" to your Ruby gem file. Then run "bundle install".
 
 - Configuring It: This app stores environment variables config/credentials.yml.enc which is supported by Rails 5.x or higher. This is an encrypted file so you will not be able to read it or edit it directly. The file config/master.key holds a small key (or "password") to decrypt the credentials file.
 
@@ -39,22 +49,11 @@ To add your environment credentials:
 ![Controller](/braintree_ruby_integration/public/screenshots/braintree_credentials_example_in_controller.png "Controller")
 
 - Running it: Run "rails server" in your project directory and open your browser to localhost:3000. From there you will be able to input the test card numbers (currently listed as placeholder text) and click pay. You will receive confirmation that the transaction was created in your rails server, your browser console.
-
-### Known issues
-- This was tested on Chrome. I do not know how the page will display on other or older browsers. 
-- The page load time slow on initial load. If you are on a slow connection you may have to wait several seconds before the Hosted Fields appear and you are able to see the form boxes.
-- The warning boxes default on input forms default to the side of the page
-- The text box inputs start in the middle rather than left aligned
-- It's not the prettiest application in the world
-
 ### TODO - If I had more time
 - Built the Front End in Vue.js
 - Build a redirect for successful and unsuccessful post transaction page
 - Add a product to purchase
 - Use another way to input the Transaction Amount rather than hard coding it. I could have easily added an amount form but that is not something you would likely actually want in production. 
-
-### Contact
-- Blind Application Process 
 
 ----
 
