@@ -2,7 +2,7 @@
 
 ### Braintree Ruby Integration
 
-- This is an example integration with Braintrees Hosted Fields payment platform. This was built as part of the application process for an API Specialist role at Braintree / PayPal.
+- This is an example integration with Braintrees Hosted Fields payment platform. This was built with Ruby on Rails as part of the application process for an API Specialist role at Braintree / PayPal.
 
 - Braintree provides sample card information to test their platform. The details is the placeholder text in my Hosted Field forms but for your reference they are: 
 - CARD NUMBER: 4111 1111 1111 1111
@@ -39,8 +39,8 @@ I created the rails app, installed the braintree gem, integrated one route to ge
 
 - rails db:setup
 
-- EDITOR="code --wait" rails credentials:edit (assuming you're using VSCode as your editor)
-* (add credentials, see screenshot below, then close the text editor - This assumes your editor is VSCode)
+- rails credentials:edit
+* (add credentials, see screenshot below, then close the text editor - The file will open in your default editor)
 
 - rails server
 
@@ -63,6 +63,7 @@ To add your environment credentials:
 
 ### TODO - If I had more time
 - Built the Front End in Vue.js
+- Add more Tests
 - Build a redirect for successful and unsuccessful post transaction page
 - Add a product to purchase
 - Use another way to input the Transaction Amount rather than hard coding it. I could have easily added an amount form but that is not something you would likely actually want in production. 
