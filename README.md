@@ -22,11 +22,11 @@ The files to look at are:
 
 I created the rails app, installed the braintree gem, integrated one route to get a client token, a second route to send a transaction / nonce, set up the public/index.html file, added a little html/css to make the payment form nicer, and added axios to make get/post requests. 
 
-### Screenshot:
+### Screenshot
 
 ![Checkout](/public/screenshots/braintree_checkout_page_screenshot.png "Checkout")
 
-### Technology stack: 
+### Technology stack
 - This integration is built on Ruby on Rails. It uses an HTML, CSS, and JavaScript front end. 
 - It uses the Braintree API Ruby gem to build Hosted Fields for payment processing.
 - Axios is used for GET/POST requests in our index.html file.
