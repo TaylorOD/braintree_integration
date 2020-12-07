@@ -8,6 +8,7 @@
 - CARD NUMBER: 4111 1111 1111 1111
 - CVV: 123
 - EXPIRATION DATE: 10/2022
+
 - You will need to enter your own API credentials (detailed below) to use this application.
 
 ### Walkthrough
@@ -31,12 +32,23 @@ I created the rails app, installed the braintree gem, integrated one route to ge
 - Axios is used for GET/POST requests in our index.html file.
 
 ### Getting Started/Requirements/Prerequisites/Dependencies
-Include any essential instructions for:
-- Getting it: Unzip the zip file in your root target folder.
 
-- Installing It: Add the gem "braintree" to your Ruby gem file. Then run "bundle install".
+- Unzip the zip file in your root target folder.
 
-- Configuring It: This app stores environment variables config/credentials.yml.enc which is supported by Rails 5.x or higher. This is an encrypted file so you will not be able to read it or edit it directly. The file config/master.key holds a small key (or "password") to decrypt the credentials file.
+- bundle install (installs braintree gem)
+
+- rails db:setup
+
+- EDITOR="code --wait" rails credentials:edit (assuming you're using VSCode as your editor)
+* (add credentials, see screenshot below, then close the text editor - This assumes your editor is VSCode)
+
+- rails server
+
+- Open your browser to localhost:3000. From there you will be able to input the test card numbers (currently listed as placeholder text) and click pay. You will receive confirmation that the transaction was created in your rails server and your browser console.
+
+---
+
+- Configuring Environment Variables: This app stores environment variables config/credentials.yml.enc which is supported by Rails 5.x or higher. This is an encrypted file so you will not be able to read it or edit it directly. The file config/master.key holds a small key (or "password") to decrypt the credentials file.
 
 To add your environment credentials: 
 1. In your terminal project directory run: 'EDITOR="code --wait" rails credentials:edit' Your unencrypted credentials file will open in your code editor.
@@ -48,7 +60,6 @@ To add your environment credentials:
 
 ![Controller](/braintree_ruby_integration/public/screenshots/braintree_credentials_example_in_controller.png "Controller")
 
-- Running it: Run "rails server" in your project directory and open your browser to localhost:3000. From there you will be able to input the test card numbers (currently listed as placeholder text) and click pay. You will receive confirmation that the transaction was created in your rails server, your browser console.
 ### TODO - If I had more time
 - Built the Front End in Vue.js
 - Build a redirect for successful and unsuccessful post transaction page
