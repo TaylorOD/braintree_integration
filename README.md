@@ -24,7 +24,7 @@ I created the rails app, installed the braintree gem, integrated one route to ge
 
 ### Screenshot:
 
-![Checkout](/braintree_ruby_integration/public/screenshots/braintree_checkout_page_screenshot.png "Checkout")
+![Checkout](/public/screenshots/braintree_checkout_page_screenshot.png "Checkout")
 
 ### Technology stack: 
 - This integration is built on Ruby on Rails. It uses an HTML, CSS, and JavaScript front end. 
@@ -54,11 +54,11 @@ To add your environment credentials:
 1. In your terminal project directory run: 'EDITOR="code --wait" rails credentials:edit' Your unencrypted credentials file will open in your code editor.
 2. Add your Merchant ID, Public Key, and Private Key as shown in the screenshot below. Do not change your secret_key_base.
 
-![Credentials](/braintree_ruby_integration/public/screenshots/braintree_credentials_example.png "Credentials")
+![Credentials](/public/screenshots/braintree_credentials_example.png "Credentials")
 
 3. Once you are done adding your own credentials save and close the file. If you already had your rails server running you need to restart it for the changes to go into effect. Your credentials will now be added into your Gateway call in the checkout_controller (see screenshot below)
 
-![Controller](/braintree_ruby_integration/public/screenshots/braintree_credentials_example_in_controller.png "Controller")
+![Controller](/public/screenshots/braintree_credentials_example_in_controller.png "Controller")
 
 ### TODO - If I had more time
 - Built the Front End in Vue.js
