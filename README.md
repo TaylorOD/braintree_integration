@@ -48,7 +48,8 @@ I created the rails app, installed the braintree gem, integrated one route to ge
 
 ---
 
-- Configuring Environment Variables: This app stores environment variables config/credentials.yml.enc which is supported by Rails 5.x or higher. This is an encrypted file so you will not be able to read it or edit it directly. The file config/master.key holds a small key (or "password") to decrypt the credentials file.
+### Configuring Environment Variables: 
+This app stores environment variables config/credentials.yml.enc which is supported by Rails 5.x or higher. This is an encrypted file so you will not be able to read it or edit it directly. The file config/master.key holds a small key (or "password") to decrypt the credentials file.
 
 To add your environment credentials: 
 1. In your terminal project directory run: 'EDITOR="code --wait" rails credentials:edit' Your unencrypted credentials file will open in your code editor.
